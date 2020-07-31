@@ -1,0 +1,160 @@
+C:\Users\asimchi\AppData\Local\Programs\Python\Python36-32\python.exe C:/Users/asimchi/PycharmProjects/Final/feature_selection/sfs_with_knn_and_forest.py
+--------------------- SFS --------------------------
+[]
+[5]
+[5, 31]
+[5, 31, 20]
+[5, 31, 20, 19]
+[5, 31, 20, 19, 30]
+[5, 31, 20, 19, 30, 26]
+[5, 31, 20, 19, 30, 26, 82]
+[5, 31, 20, 19, 30, 26, 82, 18]
+[5, 31, 20, 19, 30, 26, 82, 18, 40]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39, 58]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39, 58, 23]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39, 58, 23, 74]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39, 58, 23, 74, 85]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39, 58, 23, 74, 85, 86]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39, 58, 23, 74, 85, 86, 57]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39, 58, 23, 74, 85, 86, 57, 84]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39, 58, 23, 74, 85, 86, 57, 84, 78]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39, 58, 23, 74, 85, 86, 57, 84, 78, 69]
+[5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39, 58, 23, 74, 85, 86, 57, 84, 78, 69, 72]
+[]
+[5]
+[5, 31]
+[5, 31, 20]
+[5, 31, 20, 17]
+[5, 31, 20, 17, 30]
+[5, 31, 20, 17, 30, 26]
+[5, 31, 20, 17, 30, 26, 68]
+[5, 31, 20, 17, 30, 26, 68, 1]
+[5, 31, 20, 17, 30, 26, 68, 1, 22]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37, 59]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37, 59, 90]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37, 59, 90, 96]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37, 59, 90, 96, 18]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37, 59, 90, 96, 18, 60]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37, 59, 90, 96, 18, 60, 58]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37, 59, 90, 96, 18, 60, 58, 55]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37, 59, 90, 96, 18, 60, 58, 55, 85]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37, 59, 90, 96, 18, 60, 58, 55, 85, 95]
+[5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37, 59, 90, 96, 18, 60, 58, 55, 85, 95, 62]
+25 sfs with knn [5, 31, 20, 19, 30, 26, 82, 18, 40, 4, 17, 37, 29, 39, 58, 23, 74, 85, 86, 57, 84, 78, 69, 72, 6]
+first 1 accuracy of knn 0.471333333333
+first 2 accuracy of knn 0.718
+first 3 accuracy of knn 0.847333333333
+first 4 accuracy of knn 0.889333333333
+first 5 accuracy of knn 0.900666666667
+first 6 accuracy of knn 0.920666666667
+first 7 accuracy of knn 0.924
+first 8 accuracy of knn 0.919333333333
+first 9 accuracy of knn 0.921333333333
+first 10 accuracy of knn 0.921333333333
+first 11 accuracy of knn 0.926
+first 12 accuracy of knn 0.93
+first 13 accuracy of knn 0.929333333333
+first 14 accuracy of knn 0.931333333333
+first 15 accuracy of knn 0.93
+first 16 accuracy of knn 0.926666666667
+first 17 accuracy of knn 0.925333333333
+first 18 accuracy of knn 0.922
+first 19 accuracy of knn 0.921333333333
+first 20 accuracy of knn 0.918666666667
+first 21 accuracy of knn 0.915333333333
+first 22 accuracy of knn 0.914666666667
+first 23 accuracy of knn 0.913333333333
+first 24 accuracy of knn 0.913333333333
+first 25 accuracy of knn 0.914666666667
+
+first 1 accuracy of forest 0.466666666667
+first 2 accuracy of forest 0.702
+first 3 accuracy of forest 0.835333333333
+first 4 accuracy of forest 0.890666666667
+first 5 accuracy of forest 0.896
+first 6 accuracy of forest 0.922666666667
+first 7 accuracy of forest 0.910666666667
+first 8 accuracy of forest 0.914
+first 9 accuracy of forest 0.912666666667
+first 10 accuracy of forest 0.913333333333
+first 11 accuracy of forest 0.918
+first 12 accuracy of forest 0.917333333333
+first 13 accuracy of forest 0.917333333333
+first 14 accuracy of forest 0.921333333333
+first 15 accuracy of forest 0.916666666667
+first 16 accuracy of forest 0.924666666667
+first 17 accuracy of forest 0.920666666667
+first 18 accuracy of forest 0.917333333333
+first 19 accuracy of forest 0.92
+first 20 accuracy of forest 0.925333333333
+first 21 accuracy of forest 0.907333333333
+first 22 accuracy of forest 0.92
+first 23 accuracy of forest 0.926666666667
+first 24 accuracy of forest 0.917333333333
+first 25 accuracy of forest 0.912
+
+25 sfs with forest [5, 31, 20, 17, 30, 26, 68, 1, 22, 82, 4, 49, 97, 37, 59, 90, 96, 18, 60, 58, 55, 85, 95, 62, 70]
+first 1 accuracy of knn 0.471333333333
+first 2 accuracy of knn 0.718
+first 3 accuracy of knn 0.847333333333
+first 4 accuracy of knn 0.896666666667
+first 5 accuracy of knn 0.904
+first 6 accuracy of knn 0.925333333333
+first 7 accuracy of knn 0.923333333333
+first 8 accuracy of knn 0.908
+first 9 accuracy of knn 0.909333333333
+first 10 accuracy of knn 0.909333333333
+first 11 accuracy of knn 0.91
+first 12 accuracy of knn 0.903333333333
+first 13 accuracy of knn 0.900666666667
+first 14 accuracy of knn 0.908
+first 15 accuracy of knn 0.907333333333
+first 16 accuracy of knn 0.903333333333
+first 17 accuracy of knn 0.9
+first 18 accuracy of knn 0.905333333333
+first 19 accuracy of knn 0.902666666667
+first 20 accuracy of knn 0.901333333333
+first 21 accuracy of knn 0.898
+first 22 accuracy of knn 0.897333333333
+first 23 accuracy of knn 0.896666666667
+first 24 accuracy of knn 0.896
+first 25 accuracy of knn 0.89
+
+first 1 accuracy of forest 0.467333333333
+first 2 accuracy of forest 0.705333333333
+first 3 accuracy of forest 0.846666666667
+first 4 accuracy of forest 0.895333333333
+first 5 accuracy of forest 0.906
+first 6 accuracy of forest 0.912666666667
+first 7 accuracy of forest 0.914
+first 8 accuracy of forest 0.922
+first 9 accuracy of forest 0.925333333333
+first 10 accuracy of forest 0.915333333333
+first 11 accuracy of forest 0.916666666667
+first 12 accuracy of forest 0.927333333333
+first 13 accuracy of forest 0.921333333333
+first 14 accuracy of forest 0.922666666667
+first 15 accuracy of forest 0.926
+first 16 accuracy of forest 0.924
+first 17 accuracy of forest 0.917333333333
+first 18 accuracy of forest 0.925333333333
+first 19 accuracy of forest 0.932666666667
+first 20 accuracy of forest 0.923333333333
+first 21 accuracy of forest 0.924666666667
+first 22 accuracy of forest 0.927333333333
+first 23 accuracy of forest 0.925333333333
+first 24 accuracy of forest 0.916666666667
+first 25 accuracy of forest 0.916666666667
+
+
+Process finished with exit code 0

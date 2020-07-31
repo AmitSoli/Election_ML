@@ -1,0 +1,2967 @@
+C:\ProgramData\Anaconda3\python.exe D:/Courses/ML/Homeworks/ML_3/models_selection/models_selection.py
+###############################################################################################################
+# Predict distribution and winner
+###############################################################################################################
+The predicted distribution: {'Greys': 0.0626, 'Purples': 0.255, 'Yellows': 0.0581, 'Pinks': 0.0922, 'Browns': 0.1718, 'Whites': 0.0324, 'Blues': 0.1003, 'Oranges': 0.0487, 'Greens': 0.1068, 'Turquoises': 0.0405, 'Reds': 0.0316}
+The predicted winner: Purples
+###############################################################################################################
+# Predict votes
+###############################################################################################################
+----------------------------------------------------------------------------------------------------------
+id3
+----------------------------------------------------------------------------------------------------------
+entropy criterion, 3 min_samples_split, 1 min_samples_leaf: 0.786
+gini criterion, 3 min_samples_split, 1 min_samples_leaf: 0.807
+----------------------------------------------------------------------------------------------------------
+knn
+----------------------------------------------------------------------------------------------------------
+1 neighbors: 0.675
+----------------------------------------------------------------------------------------------------------
+forest
+----------------------------------------------------------------------------------------------------------
+3 min_samples_split 1 min_samples_leaf 3 n_estimators entropy criterion: 0.767
+3 min_samples_split 1 min_samples_leaf 3 n_estimators gini criterion: 0.794
+3 min_samples_split 1 min_samples_leaf 7 n_estimators gini criterion: 0.795
+3 min_samples_split 1 min_samples_leaf 9 n_estimators entropy criterion: 0.8
+3 min_samples_split 1 min_samples_leaf 13 n_estimators gini criterion: 0.804
+5 min_samples_split 1 min_samples_leaf 11 n_estimators gini criterion: 0.813
+7 min_samples_split 1 min_samples_leaf 11 n_estimators gini criterion: 0.814
+----------------------------------------------------------------------------------------------------------
+svm
+----------------------------------------------------------------------------------------------------------
+poly kernel 1 degree 0.554
+poly kernel 2 degree 0.562
+----------------------------------------------------------------------------------------------------------
+voting
+----------------------------------------------------------------------------------------------------------
+(('id3', DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=3,
+            min_weight_fraction_leaf=0.0, presort=False, random_state=None,
+            splitter='best')), ('knn', KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=1, p=2,
+           weights='uniform')), ('forest', RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=7,
+            min_weight_fraction_leaf=0.0, n_estimators=11, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)))
+----------------------------------------------------------------------------------------------------------
+The Selected Model Is VotingClassifier(estimators=(('id3', DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=3,
+            min_weight_fraction_lea...n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False))),
+         flatten_transform=None, n_jobs=1, voting='hard',
+         weights=[0.807, 0.675, 0.814])
+Accuracy: 0.9366666666666666
+Error: 0.06333333333333335
+Confusion matrix, without normalization
+[[137   0   0   0   0   0   0   0   0   0  13]
+ [  0 236   0   0   0  16   3   0   0   3   0]
+ [  0   1 155   0   0   0   4   0   0   0   0]
+ [  0   2   0  89   3   0   0   0   0   0   0]
+ [  0   0   0   2  68   1   0   2   0   0   0]
+ [  0   8   0   0   0 128   0   0   0   2   0]
+ [  0   0   0   0   0   5 377   0   0   1   0]
+ [  0   0   0   0   3   0   0  44   0   0   0]
+ [  0   0   0   0   0   0   1   0  60   0   0]
+ [  0  11   0   0   0   3   2   0   0  33   0]
+ [  9   0   0   0   0   0   0   0   0   0  78]]
+Normalized confusion matrix
+[[0.91 0.   0.   0.   0.   0.   0.   0.   0.   0.   0.09]
+ [0.   0.91 0.   0.   0.   0.06 0.01 0.   0.   0.01 0.  ]
+ [0.   0.01 0.97 0.   0.   0.   0.03 0.   0.   0.   0.  ]
+ [0.   0.02 0.   0.95 0.03 0.   0.   0.   0.   0.   0.  ]
+ [0.   0.   0.   0.03 0.93 0.01 0.   0.03 0.   0.   0.  ]
+ [0.   0.06 0.   0.   0.   0.93 0.   0.   0.   0.01 0.  ]
+ [0.   0.   0.   0.   0.   0.01 0.98 0.   0.   0.   0.  ]
+ [0.   0.   0.   0.   0.06 0.   0.   0.94 0.   0.   0.  ]
+ [0.   0.   0.   0.   0.   0.   0.02 0.   0.98 0.   0.  ]
+ [0.   0.22 0.   0.   0.   0.06 0.04 0.   0.   0.67 0.  ]
+ [0.1  0.   0.   0.   0.   0.   0.   0.   0.   0.   0.9 ]]
+----------------------------------------------------------------------------------------------------------
+###############################################################################################################
+# Using the selected model to predict distribution
+###############################################################################################################
+The predicted distribution: {'Greys': 0.06066666666666667, 'Greens': 0.10333333333333333, 'Purples': 0.258, 'Yellows': 0.06066666666666667, 'Pinks': 0.102, 'Browns': 0.172, 'Oranges': 0.04933333333333333, 'Reds': 0.030666666666666665, 'Blues': 0.09733333333333333, 'Turquoises': 0.04, 'Whites': 0.026}
+The predicted winner: Purples
+Using predict votes classifier to predict distribution accuracy: 0.9366666666666666
+###############################################################################################################
+# Find Factor - most likely to change which party will win the elections
+###############################################################################################################
+Features:
+ *  Number_of_valued_Kneset_members
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_partyNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Overall_happiness_score
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Avg_Satisfaction_with_previous_vote
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Garden_sqr_meter_per_person_in_residancy_area
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Weighted_education_rank
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Number_of_valued_Kneset_membersNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Yearly_IncomeKNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Overall_happiness_scoreNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Most_Important_IssueNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_partyNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeK
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Avg_Satisfaction_with_previous_vote
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Garden_sqr_meter_per_person_in_residancy_area
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Weighted_education_rank
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Number_of_valued_Kneset_membersNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Yearly_IncomeKNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Overall_happiness_scoreNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Most_Important_IssueNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Will_vote_only_large_partyNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_score
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Garden_sqr_meter_per_person_in_residancy_area
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Weighted_education_rank
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Number_of_valued_Kneset_membersNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Yearly_IncomeKNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Overall_happiness_scoreNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Most_Important_IssueNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_partyNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_vote
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_party
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Weighted_education_rank
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Number_of_valued_Kneset_membersNull
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Yearly_IncomeKNull
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Overall_happiness_scoreNull
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Most_Important_IssueNull
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Will_vote_only_large_partyNull
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Education
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Environment
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Financial
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Military
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Other
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Social
+Were scaled DOWN and the new winner prediction is Pinks
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Number_of_valued_Kneset_membersNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Yearly_IncomeKNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Overall_happiness_scoreNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Most_Important_IssueNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Will_vote_only_large_partyNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rank
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Yearly_IncomeKNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Overall_happiness_scoreNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Most_Important_IssueNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Will_vote_only_large_partyNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Number_of_valued_Kneset_membersNull
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Overall_happiness_scoreNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Most_Important_IssueNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Will_vote_only_large_partyNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Yearly_IncomeKNull
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Most_Important_IssueNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Will_vote_only_large_partyNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Overall_happiness_scoreNull
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Most_Important_IssueNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Will_vote_only_large_partyNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+ *  Will_vote_only_large_partyNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Most_Important_IssueNull
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_partyNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_partyNull
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_partyNull
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_partyNull
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_partyNull
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_partyNull
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_partyNull
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_partyNull
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_partyNull
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Will_vote_only_large_partyNull
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Weighted_education_rankNull
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rankNull
+ *  Education
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rankNull
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rankNull
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rankNull
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rankNull
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rankNull
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rankNull
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Weighted_education_rankNull
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Education
+ *  Environment
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Education
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Education
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Education
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Education
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Education
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Education
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Environment
+ *  Financial
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Environment
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Environment
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Environment
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Environment
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Environment
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Financial
+ *  Foreign_Affairs
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Financial
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Financial
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Financial
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Financial
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Foreign_Affairs
+ *  Healthcare
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Foreign_Affairs
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Foreign_Affairs
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Foreign_Affairs
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Healthcare
+ *  Military
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Healthcare
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Healthcare
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Military
+ *  Other
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Military
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Number_of_valued_Kneset_members
+ *  Other
+ *  Social
+Were scaled DOWN and the new winner prediction is Browns
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Yearly_IncomeK
+ *  Will_vote_only_large_party
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Overall_happiness_score
+ *  Will_vote_only_large_party
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Avg_Satisfaction_with_previous_vote
+ *  Will_vote_only_large_party
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Weighted_education_rank
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Number_of_valued_Kneset_membersNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Yearly_IncomeKNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Overall_happiness_scoreNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Most_Important_IssueNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_area
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Number_of_valued_Kneset_membersNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Yearly_IncomeKNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Overall_happiness_scoreNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Most_Important_IssueNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rank
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Yearly_IncomeKNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Overall_happiness_scoreNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Most_Important_IssueNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Number_of_valued_Kneset_membersNull
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Overall_happiness_scoreNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Most_Important_IssueNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Yearly_IncomeKNull
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Avg_Satisfaction_with_previous_voteNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Most_Important_IssueNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Overall_happiness_scoreNull
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Most_Important_IssueNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Avg_Satisfaction_with_previous_voteNull
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+ *  Will_vote_only_large_partyNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Most_Important_IssueNull
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Will_vote_only_large_partyNull
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Weighted_education_rankNull
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Garden_sqr_meter_per_person_in_residancy_areaNull
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+ *  Education
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Weighted_education_rankNull
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Education
+ *  Environment
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Education
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Education
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Education
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Education
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Education
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Education
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Environment
+ *  Financial
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Environment
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Environment
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Environment
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Environment
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Environment
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Financial
+ *  Foreign_Affairs
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Financial
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Financial
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Financial
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Financial
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Foreign_Affairs
+ *  Healthcare
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Foreign_Affairs
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Foreign_Affairs
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Foreign_Affairs
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Healthcare
+ *  Military
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Healthcare
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Healthcare
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Military
+ *  Other
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Military
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+Features:
+ *  Will_vote_only_large_party
+ *  Other
+ *  Social
+Were scaled UP and the new winner prediction is Oranges
+-------------------------------------------------------------------------
+
+Process finished with exit code 0
